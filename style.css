@@ -1,0 +1,72 @@
+/* 1. CONFIGURAÇÃO GERAL DA PÁGINA */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte moderna e limpa */
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Fundo degradê suave e elegante */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 2. CONTAINER DOS ELEMENTOS PRINCIPAIS */
+.container-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: white; /* Caixa branca em volta para destacar */
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra suave profissional */
+  width: 90%;
+  max-width: 400px; /* Mantém um tamanho ótimo no PC e no celular */
+  margin-bottom: 30px;
+}
+
+/* 3. ESTILO DA PALAVRA "OLA" */
+.palavra {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+/* 4. ESTILO DO BOTÃO PROFISSIONAL */
+.botao-azul {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 16px 28px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%; /* Ocupa a largura total do container */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animação ultra suave */
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3); /* Brilho azul sutil no botão */
+}
+
+/* Efeito ao passar o mouse */
+.botao-azul:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px); /* Flutua levemente para cima */
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+/* Efeito ao clicar */
+.botao-azul:active {
+  transform: translateY(-1px);
+}
+
+/* 5. ESTILO DA FRASE DE SEGUIDORES */
+.fraze {
+  font-size: 18px;
+  font-weight: 500;
+  color: #d93838; /* Vermelho mais elegante e menos chamativo que o puro */
+  margin: 0;
+  text-align: center;
+}
