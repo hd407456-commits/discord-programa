@@ -67,7 +67,7 @@ body {
 .fraze {
   font-size: 18px;
   font-weight: 500;
-  color: #ffff; /* Vermelho mais elegante e menos chamativo que o puro */
+  color: red; /* Vermelho mais elegante e menos chamativo que o puro */
   margin: 0;
   text-align: center;
 }
