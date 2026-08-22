@@ -1,73 +1,79 @@
-/* 1. CONFIGURAÇÃO GERAL DA PÁGINA */
+/* Configuração geral para centralizar o conteúdo na tela */
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte moderna e limpa */
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Fundo degradê suave e elegante */
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: sans-serif;
 }
 
-/* 2. CONTAINER DOS ELEMENTOS PRINCIPAIS */
-.container-vertical {
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  background-color: white; /* Caixa branca em volta para destacar */
-  padding: 40px;
-  border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra suave profissional */
-  width: 90%;
-  max-width: 400px; /* Mantém um tamanho ótimo no PC e no celular */
-  margin-bottom: 30px;
+  gap: 15px;
 }
 
-/* 3. ESTILO DA PALAVRA "OLA" */
-.palavra {
-  font-size: 35px;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin: 0;
-  margin-bottom: 24px;
-}
-
-/* 4. ESTILO DO BOTÃO PROFISSIONAL */
-.botao-azul {
-  background-color: #007bff;
-  color: white;
+/* --- Botão com Borda Giratória --- */
+.botao-giratorio {
+  position: relative;
+  padding: 15px 35px;
+  font-size: 24px;
+  font-weight: bold; /* Texto em negrito */
+  color: #000000;
   border: none;
-  padding: 16px 28px;
-  border-radius: 50px;
+  border-radius: 20px; /* Cantos arredondados */
   cursor: pointer;
+  z-index: 1;
+  overflow: hidden; /* Corta o excesso para manter os cantos arredondados */
+}
+
+/* Pseudo-elemento que cria o gradiente giratório */
+.botao-giratorio::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  /* Cores da borda em rotação */
+  background: conic-gradient(
+    transparent, 
+    red, 
+    pink, 
+    red,
+  );
+  animation: girar 3s linear infinite;
+  z-index: -2;
+}
+
+/* Preenchimento interno do botão (Gradiente Ciano) */
+.botao-giratorio::after {
+  content: '';
+  position: absolute;
+  inset: 4px; /* Espessura da borda */
+  background: linear-gradient(to bottom, #00ffff, #80ffff); /* Fundo ciano */
+  border-radius: 16px; /* Arredondamento interno ajustado */
+  z-index: -1;
+}
+
+/* Estilo do texto descritivo */
+.descricao {
   font-size: 16px;
-  font-weight: 600;
-  width: 100%; /* Ocupa a largura total do container */
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animação ultra suave */
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3); /* Brilho azul sutil no botão */
-}
-
-/* Efeito ao passar o mouse */
-.botao-azul:hover {
-  background-color: #0056b3;
-  transform: translateY(-3px); /* Flutua levemente para cima */
-  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
-}
-
-/* Efeito ao clicar */
-.botao-azul:active {
-  transform: translateY(-1px);
-}
-
-/* 5. ESTILO DA FRASE DE SEGUIDORES */
-.fraze {
-  font-size: 18px;
-  font-weight: 500;
-  color: #ff3616; /* Vermelho mais elegante e menos chamativo que o puro */
-  margin: 0;
+  color: #333333;
+  margin-top: 10px;
   text-align: center;
+}
+
+/* Animação que faz a borda girar */
+@keyframes girar {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
