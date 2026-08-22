@@ -4,19 +4,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página Inicial</title>
-  <link rel="stylesheet" href="demonstração para a mikaelly.css">
+  <style>
+    /* Estilo geral */
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #ffffff;
+      font-family: sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    /* Botão com Borda Giratória */
+    .botao-giratorio {
+      position: relative;
+      padding: 15px 35px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #000000;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      z-index: 1;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .botao-giratorio::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(
+        transparent, 
+        blue, 
+        purple, 
+        red, 
+        orange, 
+        yellow, 
+        green, 
+        blue
+      );
+      animation: girar 3s linear infinite;
+      z-index: -2;
+    }
+
+    .botao-giratorio::after {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      background: linear-gradient(to bottom, #00ffff, #80ffff);
+      border-radius: 16px;
+      z-index: -1;
+    }
+
+    .descricao {
+      font-size: 16px;
+      color: #333333;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @keyframes girar {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Container centralizado -->
   <div class="container">
-    
-    <!-- Botão com Borda Giratória -->
     <button class="botao-giratorio">ola seja bem vindo ou meu coração</button>
-
-    <!-- Subtítulo abaixo do botão -->
     <p class="descricao">esse site mostra o tanta que eu te amo mesmo sendo simples tem um grande valor</p>
-
   </div>
 
 </body>
