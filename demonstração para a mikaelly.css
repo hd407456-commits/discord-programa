@@ -42,9 +42,13 @@ body {
   /* Cores da borda em rotação */
   background: conic-gradient(
     transparent, 
-    pink, 
+    blue, 
+    purple, 
     red, 
-    red, 
+    orange, 
+    yellow, 
+    green, 
+    blue
   );
   animation: girar 3s linear infinite;
   z-index: -2;
