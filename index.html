@@ -1,92 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página Inicial</title>
-  <style>
-    /* Estilo geral */
-    body {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background-color: #ffffff;
-      font-family: sans-serif;
-    }
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-    }
-
-    /* Botão com Borda Giratória */
-    .botao-giratorio {
-      position: relative;
-      padding: 15px 35px;
-      font-size: 24px;
-      font-weight: bold;
-      color: #000000;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      z-index: 1;
-      overflow: hidden;
-      background: transparent;
-    }
-
-    .botao-giratorio::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: conic-gradient(
-        transparent, 
-        red, 
-        pink, 
-        red 
-      );
-      animation: girar 3s linear infinite;
-      z-index: -2;
-    }
-
-    .botao-giratorio::after {
-      content: '';
-      position: absolute;
-      inset: 4px;
-      background: linear-gradient(to bottom, #00ffff, #80ffff);
-      border-radius: 16px;
-      z-index: -1;
-    }
-
-    .descricao {
-      font-size: 16px;
-      color: #333333;
-      margin-top: 10px;
-      text-align: center;
-    }
-
-    @keyframes girar {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-  </style>
+  <title>Login Profissional</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonte moderna via Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <div class="container">
-    <button class="botao-giratorio">ola seja bem vindo ou meu coração</button>
-    <p class="descricao">esse site mostra o tanto que eu te amo, mesmo sendo simples tem um grande valor para mim </p>
+  <div class="card-login">
+    <h2>Acesse sua conta</h2>
+
+    <!-- Campo Gmail -->
+    <div class="group">
+      <label for="gmail">E-mail</label>
+      <div class="input-box-animado borda-amarela">
+        <input type="email" id="gmail" placeholder="seu.email@exemplo.com" autocomplete="off">
+      </div>
+    </div>
+
+    <!-- Campo Senha -->
+    <div class="group">
+      <label for="senha">Senha</label>
+      <div class="input-box-animado borda-vermelha">
+        <input type="password" id="senha" placeholder="••••••••">
+      </div>
+    </div>
+
+    <button type="submit" class="btn-entrar">Entrar</button>
   </div>
 
 </body>
